@@ -7,7 +7,7 @@ function AppLayout() {
     <>
       <Main className={styles.noise}>
         <Container>
-          <img src="./public/gus.png" alt="An anime version of Gus" />
+          <img src="/gus.png" alt="Gus" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
             accusantium eum possimus aliquid, beatae soluta aut iste pariatur
