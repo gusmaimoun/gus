@@ -47,6 +47,11 @@ body {
   );
 }
 
+Main, Body {
+   overflow: visible; /* Ensure child elements are interactive */
+   position: relative; /* Avoid unexpected layering issues */
+}
+
 #root{
   width: 100%;
   height: 100%;
@@ -108,7 +113,7 @@ h6 {
 }
 
 img {
-  width: 75%;
+  width: 60%;
   border-radius: 100%;
   box-shadow: 3px 3px 20px var(--color-shadow);
   /* For dark mode */
