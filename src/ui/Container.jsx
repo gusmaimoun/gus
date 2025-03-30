@@ -5,6 +5,7 @@ const Container = styled.div`
   height: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  place-items: center;
 `;
 
 export default Container;
