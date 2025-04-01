@@ -16,6 +16,8 @@ import {
   Content,
   toggle,
 } from "../components/Menu";
+import { Outlet } from "react-router";
+import { NavLink, Link } from "react-router";
 
 function usePrevious(value) {
   const ref = useRef();
@@ -23,6 +25,10 @@ function usePrevious(value) {
     ref.current = value;
   }, [value]);
   return ref.current;
+}
+
+function something() {
+  console.log("gus");
 }
 
 const Tree = React.memo(({ children, name, style, defaultOpen = false }) => {
@@ -47,6 +53,7 @@ const Tree = React.memo(({ children, name, style, defaultOpen = false }) => {
         style={{ ...toggle, opacity: children ? 1 : 0.3, cursor: "pointer" }}
         onClick={() => {
           setOpen(!isOpen);
+          something();
         }}
       />
       <Title style={style}>{name}</Title>
@@ -69,19 +76,17 @@ function AppLayout() {
         <Container>
           <MenuContainer>
             <Tree name="menu" defaultOpen>
-              <Tree name="hello" />
-              <Tree name="tech stack" />
+              <NavLink to={"/home"}>
+                <Tree name="home" />
+              </NavLink>
+              <NavLink to={"/tech-stack"}>
+                <Tree name="tech stack" />
+              </NavLink>
               <Tree name={<span>🙀 something...</span>} />
             </Tree>
           </MenuContainer>
-          <img src="/gus.png" alt="Gus" />
-          <p>
-            Hey, I’m Gus, a Software Engineer based in New York City. When I’m
-            not immersed in writing code, I enjoy exploring the city’s vibrant
-            food culture and staying updated on the latest in sports. In my
-            downtime, I like to stay active with occasional runs, unwind at the
-            park, or enjoy video games with friends.
-          </p>
+
+          <Outlet />
         </Container>
       </Main>
     </>

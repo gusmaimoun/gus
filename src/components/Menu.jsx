@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { animated } from "@react-spring/web";
 
-const MenuContainer = styled("div")`
+const MenuContainer = styled("nav")`
   width: 100%;
   height: 100%;
   margin: 0;
