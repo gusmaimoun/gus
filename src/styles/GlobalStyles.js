@@ -113,7 +113,7 @@ h6 {
 }
 
 img {
-  width: 60%;
+  width: 30%;
   border-radius: 100%;
   box-shadow: 3px 3px 20px var(--color-shadow);
   /* For dark mode */
